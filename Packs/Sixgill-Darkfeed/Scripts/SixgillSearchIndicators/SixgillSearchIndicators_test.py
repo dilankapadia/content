@@ -1,7 +1,7 @@
 import json
 
 import demistomock as demisto
-from SearchIndicators import search_indicators
+from SixgillSearchIndicators import search_indicators
 
 
 json_raw_data = '''[
