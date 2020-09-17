@@ -67,7 +67,8 @@ class Client:
                 else:
                     operator: Optional[str] = self.date_params.get(key, {}).get('operator')
                     api_key: Optional[str] = self.date_params.get(key, {}).get('api_key')
-                    filter_query += f"{api_key}:{operator}{int(parse(args[key], settings={'TIMEZONE': 'UTC'}).timestamp())}+"
+                    filter_query += f"{api_key}:" \
+                                    f"{operator}{int(parse(args[key]).replace(tzinfo=timezone.utc).timestamp())}+"
 
         if filter_query.endswith('+'):
             filter_query = filter_query[:-1]
