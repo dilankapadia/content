@@ -1,19 +1,23 @@
 args:
-- description: Remote Networks CSV File
-  name: csv
+- name: csv
   required: true
-- defaultValue: aes-128-cbc
-  name: Encryption
+  description: Remote Networks CSV File
+- name: Encryption
   required: true
-- defaultValue: sha1
-  name: Hash
+  description: Encryption Type
+  defaultValue: aes-128-cbc
+- name: Hash
   required: true
-- defaultValue: group2
-  name: DHGroup
+  description: Hashing Algorithm
+  defaultValue: sha1
+- name: DHGroup
   required: true
-- defaultValue: "8"
-  name: Lifetime
+  description: Device Group
+  defaultValue: group2
+- name: Lifetime
   required: true
+  description: Lifetime
+  defaultValue: "8"
 commonfields:
   id: PrismaAccessRemoteNetworkBulkCreation_Integration
   version: -1
