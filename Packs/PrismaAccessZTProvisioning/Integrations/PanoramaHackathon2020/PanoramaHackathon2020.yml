@@ -2678,21 +2678,26 @@ script:
       description: Whether the IP address was found or not.
       type: String
   - arguments:
-    - auto: PREDEFINED
-      name: action
+    - name: action
+      required: true
+      auto: PREDEFINED
       predefined:
       - set
+      description: Action - i.e. set
+    - name: type
       required: true
-    - auto: PREDEFINED
-      name: type
+      auto: PREDEFINED
       predefined:
       - config
-      required: true
+      description: Type - i.e. config
     - name: xpath
       required: true
+      description: XPath Param
     - name: httptype
       required: true
+      description: HTTP Type - Post, Get
     - name: element
+      description: Element Param
     description: Run Advanced Commands
     name: panorama-advanced-command
   dockerimage: demisto/python3:3.8.3.9324
